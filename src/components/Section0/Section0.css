@@ -1,0 +1,154 @@
+.video-0-hide {
+    display: none;
+}
+
+
+.section-0 {
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    transition: 1.5s;
+    opacity: 0;
+}
+
+.section-0-active {
+    top: 60px;
+    opacity: 1;
+}
+
+#section-0-t1 {
+    font-size: 60px;
+    color: white;
+    font-family: "NotoSans-Black";
+}
+
+#section-0-t2 {
+    margin-top: 12px;
+    font-size: 40px;
+    color: white;
+    font-family: "KGBrokenVesselsSketch";
+}
+
+.video-1 {
+    transition: 1.5s;
+    top: 0%;
+    border-radius: 0px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+.video-inner-1 {
+    grid-row: 1/1;
+    grid-column: 1/1;
+    transition: 1s;
+}
+
+.video-1-s2 .video-inner-1 {
+    opacity: 0;
+}
+
+.video-1-s3 .video-inner-1 {
+    opacity: 0;
+}
+
+.video-inner-2 {
+    grid-row: 1/1;
+    grid-column: 1/1;
+    transition: 1s;
+}
+
+.video-1-s3 .video-inner-2 {
+    opacity: 0;
+}
+
+.video-inner-3 {
+    grid-row: 1/1;
+    grid-column: 1/1;
+}
+
+.video-1-s1 {
+    top: 5%;
+    width: 92dvh;
+    height: 35%;
+    border-radius: 200px;
+}
+
+.video-1-s2 {
+    top: 10%;
+    margin-left: 45%;
+    width: 45%;
+    height: 65%;
+    border-radius: 40px;
+}
+
+.video-1-s3 {
+    top: 10%;
+    margin-left: -45%;
+    width: 45%;
+    height: 65%;
+    border-radius: 40px;
+    transform: rotate(0deg);
+}
+
+.video-1-s4 {
+    transform: rotate(-15deg);
+    top: 60%;
+    margin-left: -280%;
+    width: 45%;
+    height: 70%;
+    border-radius: 40px;
+}
+
+.video-1-s5,
+.video-1-s6 {
+    display: none;
+}
+
+.know-more {
+    position: fixed;
+    left: 50%;
+    transform: rotateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    opacity: 0;
+    bottom: 5%;
+    transition: 1s;
+}
+
+.km-0 {
+    opacity: 1;
+}
+
+.know-more p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.know-more svg {
+    color: white;
+    animation-name: arrow-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    font-size: 17px;
+}
+
+@keyframes arrow-animation {
+    0% {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    50% {
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    100% {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+}

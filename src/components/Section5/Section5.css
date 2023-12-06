@@ -1,0 +1,109 @@
+.video-5 {
+    top: 35%;
+    left: 120%;
+    width: 45%;
+    height: 70%;
+    border-radius: 40px;
+    transform: rotate(15deg);
+    transition: 1.5s;
+}
+
+.video-5-s5 {
+    top: 10%;
+    left: 5%;
+    transform: rotate(0deg);
+}
+
+.video-5-s6 {
+    transform: rotate(-15deg);
+    top: 60%;
+    left: -180%;
+}
+
+
+
+.section-5 {
+    overflow: hidden;
+    width: 40%;
+    height: 65%;
+    position: fixed;
+    left: 170%;
+    top: 50%;
+    transition: 1.5s;
+    transform: rotate(15deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-5-s5 {
+    transform: rotate(0);
+    left: 55%;
+    top: 10%;
+}
+
+.section-5-s6 {
+    transform: rotate(-15deg);
+    top: 45%;
+    left: -120%;
+}
+
+
+.section-5-inner {
+    min-width: 80%;
+    max-width: 80%;
+    transition: 1.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+.section-5-title {
+    font-family: 'WorkSans-Regular';
+    font-size: 18px;
+    color: #FF5811;
+    border: 1px solid #FF5811;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.section-5-head {
+    font-family: 'WorkSans-ExtraBold';
+    font-size: 60px;
+    background: linear-gradient(93deg, #117EFF 1.24%, #71B2FF 70.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-5-text {
+    min-width: 100%;
+    font-size: 20px;
+    line-height: 27px;
+    font-family: 'WorkSans-Medium';
+}
+
+.section-5-age-box {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.section-5-age-group {
+    font-family: 'WorkSans-SemiBold';
+    background: linear-gradient(93deg, #004DA7 1.24%, #256BBE 70.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-5-age {
+    font-family: 'WorkSans-Medium';
+    background: linear-gradient(93deg, #0D51A2 1.24%, #3C79C2 70.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

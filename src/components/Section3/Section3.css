@@ -1,0 +1,89 @@
+.section-3 {
+    overflow: hidden;
+    width: 40%;
+    height: 65%;
+    position: fixed;
+    left: 55%;
+    top: 10%;
+    transition: 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-3-inner {
+    min-width: 80%;
+    max-width: 80%;
+    margin-left: 200%;
+    transition: 1.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.section-3-s3 .section-3-inner {
+    margin-left: 0;
+}
+
+.section-3-s4 .section-3-inner {
+    margin-left: 0;
+}
+
+.section-3-s4 {
+    transform: rotate(-15deg);
+    top: 50%;
+    margin-left: -120%;
+}
+
+.section-3-s5 {
+    display: none;
+}
+
+.section-3-title {
+    font-family: 'WorkSans-Regular';
+    font-size: 18px;
+    color: #FF5811;
+    border: 1px solid #FF5811;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.section-3-head {
+    font-family: 'WorkSans-ExtraBold';
+    font-size: 60px;
+    background: linear-gradient(93deg, #117EFF 1.24%, #71B2FF 70.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-3-text{
+    min-width: 100%;
+    font-size: 20px;
+    line-height: 27px;
+    font-family: 'WorkSans-Medium';
+}
+
+.section-3-age-box{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.section-3-age-group{
+    font-family: 'WorkSans-SemiBold';
+    background: linear-gradient(93deg, #004DA7 1.24%, #256BBE 70.25%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.section-3-age{
+    background: linear-gradient(93deg, #0D51A2 1.24%, #3C79C2 70.25%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    font-family: 'WorkSans-Medium';
+}
