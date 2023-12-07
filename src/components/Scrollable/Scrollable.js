@@ -6,7 +6,7 @@ const Scrollable = ({ section, setSection }) => {
     const scrollRef = useRef(null);
 
     const handleScroll = (e) => {
-        let scrollPos = e.target.scrollTop;
+        let scrollPos = Math.round(e.target.scrollTop);
         let maxScroll = null
         if (scrollRef.current) {
             maxScroll = scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
