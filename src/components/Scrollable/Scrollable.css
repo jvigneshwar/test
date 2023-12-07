@@ -9,5 +9,11 @@
 
 .scrollable{
   width: 100%;
-  height: calc(100% + 6px);
+  height: calc(100% + 4px);
+  opacity: 1;
+}
+
+.scrollable-div-hide{
+  /* opacity: 0; */
+  height: 100%;
 }

@@ -1,38 +1,51 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./Scrollable.css"
 
 const Scrollable = ({ section, setSection }) => {
 
     const scrollRef = useRef(null);
+    const [canScroll, setCanScroll] = useState(false);
+    useEffect(() => {
+        if (section === 0) {
+            setCanScroll(true)
+        }
+    }, [section])
+
+    useEffect(() => {
+        if (canScroll) {
+            scrollRef.current.scrollTop = (scrollRef.current.scrollHeight - scrollRef.current.clientHeight) / 2;
+        }
+    }, [canScroll])
 
     const handleScroll = (e) => {
-        let scrollPos = Math.round(e.target.scrollTop);
+        let scrollPos = Math.ceil(e.target.scrollTop);
         let maxScroll = null
         if (scrollRef.current) {
             maxScroll = scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
         }
-        console.log(scrollPos + " " +maxScroll);
-        if (scrollPos === 0) {
+        console.log(scrollPos + " " + maxScroll);
+        if (scrollPos === 0 && canScroll) {
             if (section > 0) {
                 setSection(pre => pre - 1)
+                setCanScroll(false)
                 setTimeout(() => {
-                    e.target.scrollTop = 3;
+                    setCanScroll(true)
                 }, 2000)
             }
-        } else if (scrollPos === maxScroll) {
+        } else if (scrollPos === maxScroll && canScroll) {
             if (section < 6) {
                 setSection(pre => pre + 1)
+                setCanScroll(false)
                 setTimeout(() => {
-                    e.target.scrollTop = 3;
+                    setCanScroll(true)
                 }, 2000)
             }
         }
-
     }
 
     return (
         <>
-            <div className='scrollable-div' ref={scrollRef} onScroll={(e) => { handleScroll(e) }}>
+            <div className={canScroll ? 'scrollable-div' : 'scrollable-div-hide'} ref={scrollRef} onScroll={(e) => { handleScroll(e) }}>
                 <div className='scrollable'></div>
             </div>
         </>
