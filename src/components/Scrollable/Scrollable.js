@@ -1,26 +1,25 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import "./Scrollable.css"
-import { useEffect } from 'react'
 
 const Scrollable = ({ section, setSection }) => {
 
-    const [showScroll, setShowScroll] = useState(false)
-
-    useEffect(() => {
-        if (section === 0)
-            setShowScroll(true)
-    }, [section])
+    const scrollRef = useRef(null);
 
     const handleScroll = (e) => {
-        console.log(e.target.scrollTop);
-        if (e.target.scrollTop === 0) {
+        let scrollPos = e.target.scrollTop;
+        let maxScroll = null
+        if (scrollRef.current) {
+            maxScroll = scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
+        }
+        console.log(scrollPos + " " +maxScroll);
+        if (scrollPos === 0) {
             if (section > 0) {
                 setSection(pre => pre - 1)
                 setTimeout(() => {
                     e.target.scrollTop = 3;
                 }, 2000)
             }
-        } else if (e.target.scrollTop === 6) {
+        } else if (scrollPos === maxScroll) {
             if (section < 6) {
                 setSection(pre => pre + 1)
                 setTimeout(() => {
@@ -33,8 +32,8 @@ const Scrollable = ({ section, setSection }) => {
 
     return (
         <>
-            <div className='scrollable-div' onScroll={(e) => { handleScroll(e) }}>
-                {showScroll ? <div className='scrollable'></div> : <></>}
+            <div className='scrollable-div' ref={scrollRef} onScroll={(e) => { handleScroll(e) }}>
+                <div className='scrollable'></div>
             </div>
         </>
     )
