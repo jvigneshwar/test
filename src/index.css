@@ -16,7 +16,8 @@ body {
 @font-face {
   font-family: "NotoSans-Black";
   src: local("NotoSans-Black"),
-      url(./fonts/NotoSans-Black.ttf) format("truetype");
+      /* url(./fonts/NotoSans-Black.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -32,7 +33,8 @@ body {
 @font-face {
   font-family: "WorkSans-Black";
   src: local("WorkSans-Black"),
-      url(./fonts/WorkSans-Black.ttf) format("truetype");
+      /* url(./fonts/WorkSans-Black.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -40,7 +42,8 @@ body {
 @font-face {
   font-family: "WorkSans-Medium";
   src: local("WorkSans-Medium"),
-      url(./fonts/WorkSans-Medium.ttf) format("truetype");
+      /* url(./fonts/WorkSans-Medium.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -48,7 +51,8 @@ body {
 @font-face {
   font-family: "WorkSans-SemiBold";
   src: local("WorkSans-SemiBold"),
-      url(./fonts/WorkSans-SemiBold.ttf) format("truetype");
+      /* url(./fonts/WorkSans-SemiBold.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -56,7 +60,8 @@ body {
 @font-face {
   font-family: "WorkSans-Bold";
   src: local("WorkSans-Bold"),
-      url(./fonts/WorkSans-Bold.ttf) format("truetype");
+      /* url(./fonts/WorkSans-Bold.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -64,7 +69,8 @@ body {
 @font-face {
   font-family: "WorkSans-ExtraBold";
   src: local("WorkSans-ExtraBold"),
-      url(./fonts/WorkSans-ExtraBold.ttf) format("truetype");
+      /* url(./fonts/WorkSans-ExtraBold.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -72,7 +78,8 @@ body {
 @font-face {
   font-family: "WorkSans-Regular";
   src: local("WorkSans-Regular"),
-      url(./fonts/WorkSans-Regular.ttf) format("truetype");
+      /* url(./fonts/WorkSans-Regular.ttf) format("truetype"); */
+      url(./fonts/KGBrokenVesselsSketch.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }

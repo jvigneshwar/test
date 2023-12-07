@@ -31,12 +31,37 @@
 
 .video-1 {
     transition: 1.5s;
-    top: 0%;
+    top: 0%;    
     border-radius: 0px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
 }
+
+.video-1-s-1 .video-inner-2 {
+    opacity: 0;
+}
+
+.video-1-s-1 .video-inner-3 {
+    opacity: 0;
+}
+
+.video-1-s0 .video-inner-3 {
+    opacity: 0;
+}
+
+.video-1-s0 .video-inner-2 {
+    opacity: 0;
+}
+
+.video-1-s1 .video-inner-3 {
+    opacity: 0;
+}
+
+.video-1-s1 .video-inner-2 {
+    opacity: 0;
+}
+
 
 .video-inner-1 {
     grid-row: 1/1;

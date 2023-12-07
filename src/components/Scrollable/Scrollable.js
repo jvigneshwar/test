@@ -4,15 +4,16 @@ import "./Scrollable.css"
 const Scrollable = ({ section, setSection }) => {
 
     const scrollRef = useRef(null);
-    const [canScroll, setCanScroll] = useState(false);
-    useEffect(() => {
-        if (section === 0) {
-            setCanScroll(true)
-        }
-    }, [section])
+    const [canScroll, setCanScroll] = useState(true);
+    // useEffect(() => {
+    //     if (section === 0) {
+    //         setCanScroll(true)
+    //     }
+    // }, [section])
 
     useEffect(() => {
         if (canScroll) {
+            console.log(canScroll);
             scrollRef.current.scrollTop = (scrollRef.current.scrollHeight - scrollRef.current.clientHeight) / 2;
         }
     }, [canScroll])
@@ -30,7 +31,7 @@ const Scrollable = ({ section, setSection }) => {
                 setCanScroll(false)
                 setTimeout(() => {
                     setCanScroll(true)
-                }, 2000)
+                }, 1000)
             }
         } else if (scrollPos === maxScroll && canScroll) {
             if (section < 6) {
@@ -38,7 +39,7 @@ const Scrollable = ({ section, setSection }) => {
                 setCanScroll(false)
                 setTimeout(() => {
                     setCanScroll(true)
-                }, 2000)
+                }, 1000)
             }
         }
     }

@@ -1,26 +1,37 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./Section0.css"
 import { Icon } from '@iconify/react';
 
 const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoaded, setVideoLoaded }) => {
+    const [loading, setLoading] = useState(true)
     const videoRef0 = useRef(null);
     const videoRef1 = useRef(null);
     const videoRef2 = useRef(null);
     const videoRef3 = useRef(null);
 
     useEffect(() => {
-        console.log("hi");
+        console.log(videoLoaded);
         if (videoLoaded.length === 4) {
+            setLoading(pre => !pre)
             videoRef0.current.play();
         }
     }, [videoLoaded])
 
     useEffect(() => {
+        if (section === 1) {
+            videoRef1.current.play();
+            videoRef2.current.pause();
+            videoRef3.current.pause();
+        }
         if (section === 2) {
             videoRef2.current.play();
+            videoRef1.current.pause();
+            videoRef3.current.pause();
         }
-        if(section === 3){
+        if (section === 3) {
             videoRef3.current.play();
+            videoRef1.current.pause();
+            videoRef2.current.pause();
         }
     }, [section])
 
@@ -31,7 +42,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
 
     const handleTimeUpdate = () => {
         const currentTime = videoRef0.current.currentTime;
-        if (currentTime >= 2) {
+        if (currentTime > 1.5) {
             setSection(0)
         }
     }
@@ -92,6 +103,11 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     <Icon icon="ep:arrow-down-bold" />
                 </div>
             </div>
+            {loading &&
+                <div class="loader">
+                    <h1>LOADING <span class="bullets">.</span></h1>
+                </div>
+            }
         </>
     )
 }
