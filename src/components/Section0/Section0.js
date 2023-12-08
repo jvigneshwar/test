@@ -88,6 +88,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
 
             <div className={loadingVideo ? "video-0" : "video-0-hide"}>
                 <video
+                    preload="auto"
                     ref={videoRef0}
                     muted
                     onLoadedData={() => setVideoLoaded(pre => ({...pre, "0":true}))}
