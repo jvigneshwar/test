@@ -9,7 +9,8 @@ const Section6 = ({ section, setVideoLoaded }) => {
                     muted
                     autoPlay
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => [...pre, true])}
+                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "6":true}))}
+
                 >
                     <source src={require("../../video-6.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.

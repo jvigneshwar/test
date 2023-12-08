@@ -11,9 +11,12 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
 
     useEffect(() => {
         console.log(videoLoaded);
-        if (videoLoaded.length === 4) {
-            setLoading(pre => !pre)
+
+        if (videoLoaded["0"] === true && videoLoaded["1"] === true && videoLoaded["2"] === true && videoLoaded["3"] === true) {
+            setTimeout(()=>{
             videoRef0.current.play();
+                setLoading(false)
+            },1000)
         }
     }, [videoLoaded])
 
@@ -54,7 +57,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef3}
                     muted
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => [...pre, true])}
+                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "1":true}))}
                     className='video-inner-3'
                 >
                     <source src={require("../../video-3.mp4")} type="video/mp4" />
@@ -64,7 +67,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef2}
                     muted
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => [...pre, true])}
+                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "2":true}))}
                     className='video-inner-2'
                 >
                     <source src={require("../../video-2.mp4")} type="video/mp4" />
@@ -74,7 +77,8 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef1}
                     muted
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => [...pre, true])}
+                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "3":true}))}
+
                     className='video-inner-1'
                 >
                     <source src={require("../../video-1.mp4")} type="video/mp4" />
@@ -86,7 +90,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                 <video
                     ref={videoRef0}
                     muted
-                    onLoadedData={() => setVideoLoaded(pre => [...pre, true])}
+                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "0":true}))}
                     onEnded={handleEnded}
                     onTimeUpdate={handleTimeUpdate}
                 >
@@ -103,11 +107,14 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     <Icon icon="ep:arrow-down-bold" />
                 </div>
             </div>
-            {loading &&
-                <div class="loader">
-                    <h1>LOADING <span class="bullets">.</span></h1>
+                <div className={loading ? 'loading' : 'loading loading-hide'}>
+                    <img src={require("../../logo.png")} alt="logo"/>
+                    <div className='progress'>
+                        <div className={
+                            `progress-inner progress-${videoLoaded["0"] && '0'} progress-${videoLoaded["1"] && '1'} progress-${videoLoaded["2"] && '2'} progress-${videoLoaded["3"] && '3'}`
+                            }></div>
+                    </div>
                 </div>
-            }
         </>
     )
 }
