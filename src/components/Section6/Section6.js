@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./Section6.css"
 
 const Section6 = ({ section, setVideoLoaded }) => {
+
+    const videoRef6 = useRef(null)
+
+    useEffect(() => {
+        if(section===5)
+            videoRef6.current.pause();
+        if(section === 6){
+            // videoRef6.current.currentTime = 0;
+            videoRef6.current.play();
+        }
+    })
+
     return (
         <>
             <div className={`video-6 video-6-s${section}`}>
                 <video
+                    ref={videoRef6}
                     muted
-                    autoPlay
                     loop
                     onLoadedData={() => setVideoLoaded(pre => ({...pre, "6":true}))}
 

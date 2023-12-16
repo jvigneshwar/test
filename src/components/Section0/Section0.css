@@ -62,6 +62,25 @@
     opacity: 0;
 }
 
+.video-inner-0 {
+    grid-row: 1/1;
+    grid-column: 1/1;
+    transition: 1s;
+}
+
+.video-1-s1 .video-inner-0 {
+    opacity: 0;
+}
+
+.video-1-s2 .video-inner-0 {
+    opacity: 0;
+}
+
+.video-1-s3 .video-inner-0 {
+    opacity: 0;
+}
+
+
 
 .video-inner-1 {
     grid-row: 1/1;
@@ -216,7 +235,7 @@
 }
 
 .progress-0{
-    width: calc(96% / 4);
+    width: 0%;
 }
 .progress-1{
     width: calc(96% / 3);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Section0 from './components/Section0/Section0';
 import Section1 from './components/Section1/Section1';
@@ -15,6 +15,31 @@ const App = () => {
   const [videoLoaded, setVideoLoaded] = useState({})
   const [loadingVideo, setLoadingVideo] = useState(true)
   const [section, setSection] = useState(-1);
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      console.log("p");
+      if (event.key === 'ArrowUp') {
+        setSection(pre => {
+          if(pre > 0)
+            return pre - 1
+          else  
+            return pre 
+        })
+      } else if (event.key === 'ArrowDown') {
+        setSection(pre => {
+          if(pre < 6)
+            return pre + 1
+          else  
+            return pre 
+        })
+      }
+    };
+    window.addEventListener("keyup", handleKeyPress)
+    return () => {
+      window.removeEventListener('keyup', handleKeyPress);
+    };
+  }, [])
 
   return (
     <>

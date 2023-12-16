@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./Section4.css"
 
 const Section4 = ({ section, setVideoLoaded }) => {
+    const videoRef4 = useRef(null)
+
+    useEffect(() => {
+        if(section===3)
+            videoRef4.current.pause();
+        if(section === 4){
+            // videoRef4.current.currentTime = 0;
+            videoRef4.current.play();
+        }
+        if(section===5)
+            videoRef4.current.pause();
+    })
+
     return (
         <>
             <div className={`video-4 video-4-s${section}`}>
                 <video
+                    ref={videoRef4}
                     muted
-                    autoPlay
                     loop
                     onLoadedData={() => setVideoLoaded(pre => ({...pre, "4":true}))}
-
                 >
                     <source src={require("../../video-4.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
