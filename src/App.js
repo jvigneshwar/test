@@ -15,31 +15,43 @@ const App = () => {
   const [videoLoaded, setVideoLoaded] = useState({})
   const [loadingVideo, setLoadingVideo] = useState(true)
   const [section, setSection] = useState(-1);
+  const [isCooldown, setCooldown] = useState(false);
 
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      console.log("p");
+  const handleKeyPress = (event) => {
+    if (!isCooldown) {
+      let f = 0;
       if (event.key === 'ArrowUp') {
+        f = 1;
         setSection(pre => {
-          if(pre > 0)
+          if (pre > 0)
             return pre - 1
-          else  
-            return pre 
+          else
+            return pre
         })
       } else if (event.key === 'ArrowDown') {
+        f = 1;
         setSection(pre => {
-          if(pre < 6)
+          if (pre < 6)
             return pre + 1
-          else  
-            return pre 
+          else
+            return pre
         })
       }
-    };
-    window.addEventListener("keyup", handleKeyPress)
+      if (f === 1) {
+        setCooldown(true);
+        setTimeout(() => {
+          setCooldown(false);
+        }, 1000);
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress)
     return () => {
-      window.removeEventListener('keyup', handleKeyPress);
+      document.removeEventListener("keydown", handleKeyPress)
     };
-  }, [])
+  }, [isCooldown])
 
   return (
     <>
@@ -73,8 +85,9 @@ const App = () => {
         setVideoLoaded={setVideoLoaded}
       />
       <Scrollable
-        section={section}
         setSection={setSection}
+        isCooldown={isCooldown}
+        setCooldown={setCooldown}
       />
       <Nav
         section={section}

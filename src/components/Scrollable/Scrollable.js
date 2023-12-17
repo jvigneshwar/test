@@ -1,51 +1,84 @@
-import React, { useEffect, useRef, useState } from 'react'
-import "./Scrollable.css"
+import React, { useEffect, useRef } from 'react';
 
-const Scrollable = ({ section, setSection }) => {
+const Scrollable = ({ setSection,isCooldown,setCooldown }) => {
+    const prevTimeRef = useRef(new Date().getTime());
+    const scrollingsRef = useRef([]);
 
-    const scrollRef = useRef(null);
-    const [canScroll, setCanScroll] = useState(true);
-
-    useEffect(() => {
-        if (canScroll) {
-            console.log(canScroll);
-            scrollRef.current.scrollTop = (scrollRef.current.scrollHeight - scrollRef.current.clientHeight) / 2;
+    function getAverage(elements, number) {
+        var sum = 0;
+        var lastElements = elements.slice(Math.max(elements.length - number, 1));
+        for (var i = 0; i < lastElements.length; i++) {
+            sum = sum + lastElements[i];
         }
-    }, [canScroll])
-
-    const handleScroll = (e) => {
-        let scrollPos = Math.ceil(e.target.scrollTop);
-        let maxScroll = null
-        if (scrollRef.current) {
-            maxScroll = scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
-        }
-        console.log(scrollPos + " " + maxScroll);
-        if (scrollPos === 0 && canScroll) {
-            if (section > 0) {
-                setSection(pre => pre - 1)
-                setCanScroll(false)
-                setTimeout(() => {
-                    setCanScroll(true)
-                }, 600)
-            }
-        } else if (scrollPos === maxScroll && canScroll) {
-            if (section < 6) {
-                setSection(pre => pre + 1)
-                setCanScroll(false)
-                setTimeout(() => {
-                    setCanScroll(true)
-                }, 600)
-            }
-        }
+        return Math.ceil(sum / number);
     }
 
-    return (
-        <>
-            <div className={canScroll ? 'scrollable-div' : 'scrollable-div-hide'} ref={scrollRef} onScroll={(e) => { handleScroll(e) }}>
-                <div className='scrollable'></div>
-            </div>
-        </>
-    )
-}
+    useEffect(() => {
+        const mouseWheelHandler = (e) => {
+            const curTime = new Date().getTime();
+            let controlPressed = false
+            if (!controlPressed) {
+                const value = e.wheelDelta || -e.deltaY || -e.detail;
+                const delta = Math.max(-1, Math.min(1, value));
 
-export default Scrollable
+                const horizontalDetection =
+                    typeof e.wheelDeltaX !== 'undefined' || typeof e.deltaX !== 'undefined';
+                const isScrollingVertically =
+                    Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta) ||
+                    (Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection);
+
+                if (scrollingsRef.current.length > 149) {
+                    scrollingsRef.current.shift();
+                }
+                scrollingsRef.current.push(Math.abs(value));
+
+                const timeDiff = curTime - prevTimeRef.current;
+                prevTimeRef.current = curTime;
+
+                if (timeDiff > 200) {
+                    scrollingsRef.current = [];
+                }
+
+                if (!isCooldown) {
+                    const averageEnd = getAverage(scrollingsRef.current, 10);
+                    const averageMiddle = getAverage(scrollingsRef.current, 70);
+                    const isAccelerating = averageEnd >= averageMiddle;
+                    if (isAccelerating && isScrollingVertically) {
+                        if (delta < 0) {
+                            setSection(pre => {
+                                if (pre < 6)
+                                    return pre + 1
+                                else
+                                    return pre
+                            })
+                        } else {
+                            setSection(pre => {
+                                if (pre > 0)
+                                    return pre - 1
+                                else
+                                    return pre
+                            })
+                        }
+                        setCooldown(true)
+                        setTimeout(() => {
+                            setCooldown(false)
+                        }, 1000)
+                    }
+                }
+
+            }
+        };
+
+        document.addEventListener('wheel', mouseWheelHandler);
+
+        return () => {
+            document.removeEventListener('wheel', mouseWheelHandler);
+        };
+    }, [isCooldown]);
+
+    return <></>;
+};
+
+export default Scrollable;
+
+
