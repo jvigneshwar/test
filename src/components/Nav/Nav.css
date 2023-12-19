@@ -1,33 +1,133 @@
+
 .nav {
-    padding: 0px 35px;
+    padding: 0px 25px;
     border-radius: 230px;
     background: #FFF;
     box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.12);
     position: fixed;
     display: flex;
-    width: 48%;
+    gap: 40px;
     justify-content: space-between;
     align-items: center;
-    bottom: -20%;
-    left: 50%;
-    transform: translateX(-50%);
+    overflow: hidden;
+    right: 5%;
     transition: 1.5s;
+
+    &::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: 0;
+		top: 0;
+		width: 0%;
+		height: 100%;
+		background-color: black;
+	}
+
+    &::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 3px;
+		top: 3px;
+		width: calc(100% - 6px);
+		height: calc(100% - 6px);
+		background: white;
+		border-radius: 230px;
+	}
 }
 
-.nav-active {
-    bottom: 6%;
+@keyframes rotate {
+	0%{
+		width: 0%;
+	}
+	50%{
+		left: 0;
+		width: 100%;
+	}
+	100% {
+		left: 100%;
+		width: 0%;
+	}
 }
+
+.animate-nav {
+	&::before {
+		animation: rotate 2s ease;
+	}
+}
+
+
+
+.nav-s-1 {
+    top: 0%;
+    opacity: 0;
+}
+
+.nav-s0 {
+	&::before {
+		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);	
+	}
+    top: 6%;
+    opacity: 1;
+}
+
+.nav-s1 {
+	&::before {
+		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
+	}
+    top: 6%;
+}
+
+.nav-s2 {
+	&::before {
+		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
+	}
+    top: 6%;
+	right: 66%;
+}
+
+.nav-s3 {
+	&::before {
+		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
+	}
+    top: 6%;
+}
+
+.nav-s4 {
+	&::before {
+		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
+	}
+    top: 6%;
+}
+
+.nav-s5 {
+	&::before {
+		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
+	}
+    top: 6%;
+}
+
+.nav-s6 {
+	&::before {
+		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
+	}
+    top: 6%;
+}
+
+
 
 .nav-logo {
-    height: 60px;
+    height: 40px;
+    padding: 8px 0px;
 }
 
 .nav-links {
     display: flex;
-    gap: 50px;
+    gap: 35px;
 }
 
-.nav-link{
+.nav-link {
     font-family: 'KGBrokenVesselsSketch';
     color: #576986;
 }

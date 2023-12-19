@@ -1,83 +1,69 @@
 import React, { useEffect, useRef } from 'react';
 
-const Scrollable = ({ setSection,isCooldown,setCooldown }) => {
-    const prevTimeRef = useRef(new Date().getTime());
-    const scrollingsRef = useRef([]);
+const Scrollable = ({ setSection }) => {
+    const lastSectionChange = useRef(new Date().getTime());
 
-    function getAverage(elements, number) {
-        var sum = 0;
-        var lastElements = elements.slice(Math.max(elements.length - number, 1));
-        for (var i = 0; i < lastElements.length; i++) {
-            sum = sum + lastElements[i];
+    const handleKeyPress = (event) => {
+        let curTime = new Date().getTime()
+        if (event.key === 'ArrowUp') {
+            setSection(pre => {
+                if (pre > 0 && curTime - lastSectionChange.current >= 2000) {
+                    lastSectionChange.current = curTime
+                    return pre - 1
+                }
+                else
+                    return pre
+            })
+        } else if (event.key === 'ArrowDown') {
+            setSection(pre => {
+                if (pre < 6 && curTime - lastSectionChange.current >= 2000) {
+                    lastSectionChange.current = curTime
+                    return pre + 1
+                }
+                else
+                    return pre
+            })
         }
-        return Math.ceil(sum / number);
+    }
+
+    const mouseWheelHandler = (e) => {
+        const value = e.wheelDelta || -e.deltaY || -e.detail;
+        const delta = Math.max(-1, Math.min(1, value));
+        let curTime = new Date().getTime()
+        console.log(curTime - lastSectionChange.current);
+        if (delta < 0) {
+            setSection(pre => {
+                if (pre < 6 && curTime - lastSectionChange.current >= 2000) {
+                    lastSectionChange.current = curTime
+                    return pre + 1
+                }
+                else
+                    return pre
+            })
+        } else {
+            setSection(pre => {
+                if (pre > 0 && curTime - lastSectionChange.current >= 2000) {
+                    lastSectionChange.current = curTime
+                    return pre - 1
+                }
+                else
+                    return pre
+            })
+        }
     }
 
     useEffect(() => {
-        const mouseWheelHandler = (e) => {
-            const curTime = new Date().getTime();
-            let controlPressed = false
-            if (!controlPressed) {
-                const value = e.wheelDelta || -e.deltaY || -e.detail;
-                const delta = Math.max(-1, Math.min(1, value));
-
-                const horizontalDetection =
-                    typeof e.wheelDeltaX !== 'undefined' || typeof e.deltaX !== 'undefined';
-                const isScrollingVertically =
-                    Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta) ||
-                    (Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection);
-
-                if (scrollingsRef.current.length > 149) {
-                    scrollingsRef.current.shift();
-                }
-                scrollingsRef.current.push(Math.abs(value));
-
-                const timeDiff = curTime - prevTimeRef.current;
-                prevTimeRef.current = curTime;
-
-                if (timeDiff > 200) {
-                    scrollingsRef.current = [];
-                }
-
-                if (!isCooldown) {
-                    const averageEnd = getAverage(scrollingsRef.current, 10);
-                    const averageMiddle = getAverage(scrollingsRef.current, 70);
-                    const isAccelerating = averageEnd >= averageMiddle;
-                    if (isAccelerating && isScrollingVertically) {
-                        if (delta < 0) {
-                            setSection(pre => {
-                                if (pre < 6)
-                                    return pre + 1
-                                else
-                                    return pre
-                            })
-                        } else {
-                            setSection(pre => {
-                                if (pre > 0)
-                                    return pre - 1
-                                else
-                                    return pre
-                            })
-                        }
-                        setCooldown(true)
-                        setTimeout(() => {
-                            setCooldown(false)
-                        }, 1000)
-                    }
-                }
-
-            }
-        };
-
         document.addEventListener('wheel', mouseWheelHandler);
-
+        document.addEventListener("keydown", handleKeyPress)
         return () => {
             document.removeEventListener('wheel', mouseWheelHandler);
+            document.removeEventListener("keydown", handleKeyPress)
         };
-    }, [isCooldown]);
+    }, []);
 
-    return <></>;
-};
+
+    return <></>
+}
 
 export default Scrollable;
 

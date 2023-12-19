@@ -30,7 +30,14 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
     }, [videoLoaded])
 
     useEffect(() => {
-        if(section === 0){
+
+        const element = document.getElementById('nav-bar');
+        element.classList.add('animate-nav');
+        const timeoutId = setTimeout(() => {
+            element.classList.remove('animate-nav');
+        }, 2000);
+
+        if (section === 0) {
             videoRef00.current.play();
             videoRef1.current.pause();
         }
@@ -49,9 +56,11 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
             videoRef3.current.play();
             videoRef2.current.pause();
         }
-        if(section === 4){
+        if (section === 4) {
             videoRef3.current.pause();
         }
+
+        return () => clearTimeout(timeoutId);
     }, [section])
 
     const handleEnded = () => {

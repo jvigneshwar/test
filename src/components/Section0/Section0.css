@@ -2,17 +2,16 @@
     display: none;
 }
 
-
 .section-0 {
     position: fixed;
-    top: 20px;
+    top: 5%;
     left: 50px;
     transition: 1.5s;
     opacity: 0;
 }
 
 .section-0-active {
-    top: 60px;
+    top: 17%;
     opacity: 1;
 }
 
@@ -112,17 +111,17 @@
 }
 
 .video-1-s1 {
-    top: 5%;
-    width: 92dvh;
-    height: 35%;
+    top: 18%;
+    width: 93dvh;
+    height: 37%;
     border-radius: 200px;
 }
 
 .video-1-s2 {
-    top: 10%;
+    top: 8%;
     margin-left: 45%;
     width: 45%;
-    height: 65%;
+    height: 85%;
     border-radius: 40px;
 }
 
@@ -206,6 +205,7 @@
     justify-content: center;
     align-items: center;
     transition: 1s;
+    gap: 20px;
     flex-direction: column;
 }
 
