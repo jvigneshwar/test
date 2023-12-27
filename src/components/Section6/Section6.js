@@ -37,6 +37,8 @@ const Section6 = ({ section, setVideoLoaded }) => {
                         <div className='section-6-age-group'>Age Group</div>
                         <div className='section-6-age'>1.5 - 2.5 Years*</div>
                     </div>
+                    <div className='section-6-button'>Enroll</div>
+                    <img src={require("../../arrow.png")} alt="arrow" id="section-6-arrow" />
                 </div>
             </div>
         </>

@@ -1,8 +1,8 @@
 .video-4 {
     top: 60%;
     margin-left: 280%;
-    width: 45%;
-    height: 70%;
+    width: 50%;
+    height: 86%;
     border-radius: 40px;
     transform: rotate(15deg);
     transition: 1.5s;
@@ -10,8 +10,8 @@
 
 
 .video-4-s4 {
-    top: 10%;
-    margin-left: 45%;
+    top: 7%;
+    margin-left: 44%;
     transform: rotate(0deg);
 }
 
@@ -29,14 +29,14 @@
 .section-4 {
     overflow: hidden;
     width: 40%;
-    height: 65%;
+    height: 85%;
     position: fixed;
     left: 120%;
     top: 50%;
     transition: 1.5s;
     transform: rotate(15deg);
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -57,6 +57,7 @@
 }
 
 .section-4-inner {
+    position: relative;
     min-width: 80%;
     max-width: 80%;
     transition: 1.5s;
@@ -113,4 +114,30 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.section-4-button {
+    cursor: pointer;
+    font-family: 'WorkSans-ExtraBold';
+    color: #3277DF;
+    padding: 7px 30px;
+    font-size: 22px;
+    border: 3.828px solid #000;
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px #000;
+}
+
+#section-4-arrow {
+    position: absolute;
+    right: -100px;
+    top: -20px;
+    width: 160px;
+    transition: .5s;
+    transform: rotateZ(15deg);
+}
+
+.section-4-button:hover + #section-4-arrow{
+    top: calc(100% - 90px);
+    right: calc(100% - 280px);
+    transform: rotateX(180deg) rotateZ(30deg);
 }

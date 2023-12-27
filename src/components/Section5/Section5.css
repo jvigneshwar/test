@@ -1,16 +1,16 @@
 .video-5 {
     top: 35%;
     left: 120%;
-    width: 45%;
-    height: 70%;
+    width: 50%;
+    height: 86%;
     border-radius: 40px;
     transform: rotate(15deg);
     transition: 1.5s;
 }
 
 .video-5-s5 {
-    top: 10%;
-    left: 5%;
+    top: 7%;
+    left: 4%;
     transform: rotate(0deg);
 }
 
@@ -25,7 +25,7 @@
 .section-5 {
     overflow: hidden;
     width: 40%;
-    height: 65%;
+    height: 85%;
     position: fixed;
     left: 170%;
     top: 50%;
@@ -50,6 +50,7 @@
 
 
 .section-5-inner {
+    position: relative;
     min-width: 80%;
     max-width: 80%;
     transition: 1.5s;
@@ -106,4 +107,30 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.section-5-button {
+    cursor: pointer;
+    font-family: 'WorkSans-ExtraBold';
+    color: #3277DF;
+    padding: 7px 30px;
+    font-size: 22px;
+    border: 3.828px solid #000;
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px #000;
+}
+
+#section-5-arrow {
+    position: absolute;
+    right: 170px;
+    top: 0px;
+    width: 160px;
+    transition: .5s;
+    transform: rotateZ(15deg);
+}
+
+.section-5-button:hover + #section-5-arrow{
+    top: calc(100% - 90px);
+    right: calc(100% - 280px);
+    transform: rotateX(180deg) rotateZ(30deg);
 }

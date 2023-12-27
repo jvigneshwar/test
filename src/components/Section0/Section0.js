@@ -30,11 +30,13 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
     }, [videoLoaded])
 
     useEffect(() => {
-
         const element = document.getElementById('nav-bar');
+        const element1 = document.getElementById('nav-bar1');
         element.classList.add('animate-nav');
+        element1.classList.add('animate-nav');
         const timeoutId = setTimeout(() => {
             element.classList.remove('animate-nav');
+            element1.classList.remove('animate-nav');
         }, 2000);
 
         if (section === 0) {

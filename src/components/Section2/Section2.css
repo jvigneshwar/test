@@ -1,10 +1,10 @@
 .section-2 {
     overflow: hidden;
     width: 40%;
-    height: 65%;
+    height: 70%;
     position: fixed;
     left: 5%;
-    top: 30%;
+    top: 21%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,11 +40,12 @@
     color: #1A1A1A;
 }
 
-.section-2-button{
+.section-2-button {
     font-family: 'WorkSans-ExtraBold';
     color: #FF5811;
-    padding: 15px 70px;
-    font-size: 18px;
-    border-radius: 50px;
-    border: 1px solid #00FF19;
+    padding: 7px 30px;
+    font-size: 22px;
+    border: 3.828px solid #000;
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px #000;
 }

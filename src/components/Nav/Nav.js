@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Nav.css"
+import { Link } from 'react-router-dom'
 
 const Nav = ({section}) => {
   return (
@@ -7,7 +8,9 @@ const Nav = ({section}) => {
         <img alt='logo' src={require("../../logo.png")} className='nav-logo'/>
         <div className='nav-links'>
             {/* <div className='nav-link'>{section}</div> */}
-            <div className='nav-link'>Gallery</div>
+            <Link to="/gallery">
+              <div className='nav1-link'>Gallery</div>
+            </Link>
             <div className='nav-link'>Contact Us</div>
         </div>
     </div>

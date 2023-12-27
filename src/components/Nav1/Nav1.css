@@ -1,5 +1,5 @@
 
-.nav {
+.nav1 {
     padding: 0px 25px;
     border-radius: 230px;
     background: #FFF;
@@ -37,7 +37,7 @@
 	}
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
 	0%{
 		width: 0%;
 	}
@@ -49,51 +49,74 @@
 		left: 100%;
 		width: 0%;
 	}
-}
+} */
 
-.animate-nav {
+/* .animate-nav {
 	&::before {
 		animation: rotate 2s ease;
 	}
-}
+} */
 
 
 
-.nav-s-1 {
+.nav1-s-1 {
     top: 0%;
     opacity: 0;
+	right: -53%;
 }
 
-.nav-s0 {
+.nav1-s0 {
 	&::before {
 		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);	
 	}
     top: 6%;
+	right: -53%;
     opacity: 1;
 }
 
-.nav-s1 {
+.nav1-s1 {
 	&::before {
 		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
 	}
     top: 6%;
+	right: -53%;
 }
 
-.nav-s2 {
+.nav1-s2 {
 	&::before {
 		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
 	}
     top: 6%;
+	right: -53%;
+
 }
 
-.nav-s3 {
+.nav1-s3 {
+	&::before {
+		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
+	}
+    top: 6%;
+	right: -53%;
+
+}
+
+.nav1-s4 {
+	&::before {
+		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
+	}
+    top: 6%;
+	right: -53%;
+
+}
+
+.nav1-s5 {
 	&::before {
 		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
 	}
     top: 6%;
 }
 
-.nav-s4 {
+.nav1-s6 {
 	&::before {
 		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
 	}
@@ -101,41 +124,20 @@
 	right: 66%;
 }
 
-.nav-s5 {
-	&::before {
-		background: linear-gradient(93deg, #1170FF 1.24%, #5599E9 40.18%, #5178FF 99.32%);
-	}
-    top: 6%;
-	right: 120%;
-}
-
-.nav-s6 {
-	&::before {
-		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
-	}
-    top: 6%;
-	right: 110%;
-}
 
 
-
-.nav-logo {
+.nav1-logo {
     height: 40px;
     padding: 8px 0px;
 }
 
-.nav-links {
+.nav1-links {
     display: flex;
     gap: 35px;
 }
 
-.nav-link {
-	width: max-content;
+.nav1-link {
     font-family: 'KGBrokenVesselsSketch';
     color: #576986;
 	cursor: pointer;
-}
-
-.nav-links a{
-	text-decoration: none;
 }

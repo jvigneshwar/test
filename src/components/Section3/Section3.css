@@ -1,7 +1,7 @@
 .section-3 {
     overflow: hidden;
     width: 40%;
-    height: 65%;
+    height: 85%;
     position: fixed;
     left: 55%;
     top: 10%;
@@ -12,6 +12,7 @@
 }
 
 .section-3-inner {
+    position: relative;
     min-width: 80%;
     max-width: 80%;
     margin-left: 200%;
@@ -58,32 +59,58 @@
     -webkit-text-fill-color: transparent;
 }
 
-.section-3-text{
+.section-3-text {
     min-width: 100%;
     font-size: 20px;
     line-height: 27px;
     font-family: 'WorkSans-Medium';
 }
 
-.section-3-age-box{
+.section-3-age-box {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.section-3-age-group{
+.section-3-age-group {
     font-family: 'WorkSans-SemiBold';
     background: linear-gradient(93deg, #004DA7 1.24%, #256BBE 70.25%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.section-3-age{
+.section-3-age {
     background: linear-gradient(93deg, #0D51A2 1.24%, #3C79C2 70.25%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: 'WorkSans-Medium';
+}
+
+.section-3-button {
+    cursor: pointer;
+    font-family: 'WorkSans-ExtraBold';
+    color: #3277DF;
+    padding: 7px 30px;
+    font-size: 22px;
+    border: 3.828px solid #000;
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px #000;
+}
+
+#section-3-arrow {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 160px;
+    transition: .5s;
+    transform: rotateZ(15deg);
+}
+
+.section-3-button:hover + #section-3-arrow{
+    top: calc(100% - 90px);
+    right: calc(100% - 280px);
+    transform: rotateX(180deg) rotateZ(30deg);
 }

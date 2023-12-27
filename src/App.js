@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Section0 from './components/Section0/Section0';
 import Section1 from './components/Section1/Section1';
@@ -9,6 +9,8 @@ import Section6 from './components/Section6/Section6';
 import Section5 from './components/Section5/Section5';
 import Scrollable from './components/Scrollable/Scrollable';
 import Nav from './components/Nav/Nav';
+import Nav1 from './components/Nav1/Nav1';
+import SectionIndicator from './components/SectionIndicator/SectionIndicator';
 
 const App = () => {
 
@@ -51,6 +53,12 @@ const App = () => {
         setSection={setSection}
       />
       <Nav
+        section={section}
+      />
+      <Nav1
+        section={section}
+      />
+      <SectionIndicator 
         section={section}
       />
     </>

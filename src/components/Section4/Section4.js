@@ -5,13 +5,13 @@ const Section4 = ({ section, setVideoLoaded }) => {
     const videoRef4 = useRef(null)
 
     useEffect(() => {
-        if(section===3)
+        if (section === 3)
             videoRef4.current.pause();
-        if(section === 4){
-            // videoRef4.current.currentTime = 0;
+        if (section === 4) {
+            videoRef4.current.currentTime = 0;
             videoRef4.current.play();
         }
-        if(section===5)
+        if (section === 5)
             videoRef4.current.pause();
     })
 
@@ -22,7 +22,7 @@ const Section4 = ({ section, setVideoLoaded }) => {
                     ref={videoRef4}
                     muted
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "4":true}))}
+                    onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "4": true }))}
                 >
                     <source src={require("../../video-4.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -37,6 +37,8 @@ const Section4 = ({ section, setVideoLoaded }) => {
                         <div className='section-4-age-group'>Age Group</div>
                         <div className='section-4-age'>1.5 - 2.5 Years*</div>
                     </div>
+                    <div className='section-4-button'>Enroll</div>
+                    <img src={require("../../arrow.png")} alt="arrow" id="section-4-arrow" />
                 </div>
             </div>
         </>

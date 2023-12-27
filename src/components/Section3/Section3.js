@@ -12,6 +12,8 @@ const Section3 = ({section}) => {
               <div className='section-3-age-group'>Age Group</div>
               <div className='section-3-age'>1.5 - 2.5 Years*</div>
             </div>
+            <div className='section-3-button'>Enroll</div>
+            <img src={require("../../arrow.png")} alt="arrow" id="section-3-arrow"/>
         </div>
     </div>
   )
