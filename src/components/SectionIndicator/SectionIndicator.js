@@ -3,7 +3,7 @@ import "./SectionIndicator.css"
 
 const SectionIndicator = ({section}) => {
   return (
-    <div className="section-indicator">
+    <div className={`section-indicator ${(section===-1 || section===0) && 'section-indicator-white'}`}>
         <div className={`bar ${section===0 ? 'bar-active' : ''}`}></div>
         <div className={`bar ${section===1 ? 'bar-active' : ''}`}></div>
         <div className={`bar ${section===2 ? 'bar-active' : ''}`}></div>
