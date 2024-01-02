@@ -1,0 +1,71 @@
+.boxes{
+    display: flex;
+    gap: 20px;
+}
+.box{
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+}
+
+.box-fill{
+    &::after{
+        width: 20px;
+        height: 20px;
+        content: '';
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+#pin{
+    opacity: 0;
+    position: absolute;
+}
+
+.admin{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.event-name,.event-date,.output{
+    font-family: KGBrokenVesselsSketch;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.output{
+    border: 2px solid black;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+.output:hover{
+    &::after{
+        position: absolute;
+        content: 'copy';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: white;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+    }
+}
+
+.output:active {
+    &::after{
+        content: 'copied';
+    }
+}

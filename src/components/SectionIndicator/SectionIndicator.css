@@ -9,20 +9,53 @@
 .bar{
     width: 8px;
     height: 8px;
-    border: 1px solid #797979;
+    background-color:#797979;
     border-radius: 20px;
     transition: .3s;
 }
-
+/* 
 .bar-active{
     background-color: #797979;
+} */
+
+.bar-active{
+    top: -3px;
+    left: -3px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid #797979;
+    transition: .5s;
+}
+
+.bar-active-1{
+    top: 20px;
+}
+.bar-active-2{
+    top: 43px;
+}
+.bar-active-3{
+    top: 66px;
+}
+
+.bar-active-4{
+    top: 89px;
+}
+.bar-active-5{
+    top: 112px;
+}
+.bar-active-6{
+    top: 135px;
 }
 
 .section-indicator-white{
     .bar{
-        border: 1px solid white;
+        background-color: white;
+
     }
     .bar-active{
-        background-color: white;
+        border: 1px solid white;
     }
 }
