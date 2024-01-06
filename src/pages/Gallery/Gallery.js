@@ -12,7 +12,7 @@ const Gallery = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://test-backend-0366.onrender.com/")
+    fetch("https://tame-jade-moth-robe.cyclic.app/")
       .then(res => res.json())
       .then(data => {
         setLoading(false)
