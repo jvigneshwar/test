@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Nav1 = ({section}) => {
   return (
     <div className={`nav1 nav1-s${section}`} id='nav-bar1'>
-        <img alt='logo' src={require("../../logo.png")} className='nav1-logo'/>
+        <img alt='logo' src={require("../../assets/logo.png")} className='nav1-logo'/>
         <div className='nav1-links'>
             {/* <div className='nav1-link'>{section}</div> */}
             <Link to="/gallery">

@@ -21,7 +21,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
         // console.log(c);
         setLoadLength(c);
 
-        if (videoLoaded["0"] === true && videoLoaded["1"] === true && videoLoaded["2"] === true && videoLoaded["3"] === true) {
+        if (videoLoaded["0"] === true && videoLoaded["1"] === true && videoLoaded["2"] === true && videoLoaded["3"] === true && videoLoaded["4"] === true) {
             setTimeout(() => {
                 videoRef0.current.play();
                 setLoading(false)
@@ -87,7 +87,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "1": true }))}
                     className='video-inner-3'
                 >
-                    <source src={require("../../video-3.mp4")} type="video/mp4" />
+                    <source src={require("../../assets/video-3.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -97,7 +97,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "2": true }))}
                     className='video-inner-2'
                 >
-                    <source src={require("../../video-2.mp4")} type="video/mp4" />
+                    <source src={require("../../assets/video-2.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -108,18 +108,17 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
 
                     className='video-inner-1'
                 >
-                    <source src={require("../../video-1.mp4")} type="video/mp4" />
+                    <source src={require("../../assets/video-1.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
                     ref={videoRef00}
                     muted
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "3": true }))}
-
+                    onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "4": true }))}
                     className='video-inner-0'
                 >
-                    <source src={require("../../video-00.mp4")} type="video/mp4" />
+                    <source src={require("../../assets/video-00.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -132,7 +131,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onEnded={handleEnded}
                     onTimeUpdate={handleTimeUpdate}
                 >
-                    <source src={require("../../video-0.mp4")} type="video/mp4" />
+                    <source src={require("../../assets/video-0.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -146,7 +145,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                 </div>
             </div>
             <div className={loading ? 'loading' : 'loading loading-hide'}>
-                <img src={require("../../logo.png")} alt="logo" />
+                <img src={require("../../assets/logo.png")} alt="logo" />
                 <div className='progress'>
                     <div className={
                         `progress-inner progress-${loadLength}`

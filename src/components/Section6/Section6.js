@@ -24,7 +24,7 @@ const Section6 = ({ section, setVideoLoaded }) => {
                     onLoadedData={() => setVideoLoaded(pre => ({...pre, "6":true}))}
 
                 >
-                    <source src={require("../../video-6.mp4")} type="video/mp4" />
+                    <source src={require("../../assets/video-6.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -38,7 +38,7 @@ const Section6 = ({ section, setVideoLoaded }) => {
                         <div className='section-6-age'>1.5 - 2.5 Years*</div>
                     </div>
                     <div className='section-6-button'>Enroll</div>
-                    <img src={require("../../arrow.png")} alt="arrow" id="section-6-arrow" />
+                    <img src={require("../../assets/arrow.png")} alt="arrow" id="section-6-arrow" />
                 </div>
             </div>
         </>

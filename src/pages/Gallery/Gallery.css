@@ -20,15 +20,18 @@ html {
 
 .gallery-header {
     width: 80%;
+    height: 15%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .gallery {
-    padding: 20px;
     overflow-y: scroll;
-    width: fit-content;
+    overflow-x: hidden;
+    padding: 30px;
+    width: 90%;
+    height: 85%;
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
@@ -50,13 +53,14 @@ html {
     cursor: pointer;
     border-radius: 20px;
     box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.12);
-    width: 370px;
+    width: 100%;
     padding: 17px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
+
 }
 
 .gallery-content {
@@ -81,7 +85,7 @@ html {
     border-radius: 30px 0px 0px 30px;
 }
 
-.gallery-image-container-activve {
+.gallery-image-container-active {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -90,7 +94,25 @@ html {
     height: 85%;
 }
 
-.gallery-image-container-activve .gallery-image {
+.gallery-image-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background: url('../../assets/gallery-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery-image-bg-active{
+    display: block;
+}
+
+
+.gallery-image-container-active .gallery-image {
     display: none;
     transform: rotate(3deg);
     position: absolute;
@@ -100,7 +122,7 @@ html {
     box-shadow: 0px 0px 20px 0px rgba(102, 34, 0, 0.27);
 }
 
-.gallery-image-container-activve .gallery-content {
+.gallery-image-container-active .gallery-content {
     position: absolute;
     height: 88%;
     display: flex;
@@ -110,7 +132,7 @@ html {
     line-height: 35px;
 }
 
-.gallery-image-container-activve .gallery-content-inner {
+.gallery-image-container-active .gallery-content-inner {
     font-size: 20px;
 }
 
@@ -179,11 +201,15 @@ html {
     width: 76.34px;
 }
 
-.loading {
-    margin-top: 50px;
-    background-color: transparent;
+.gallery-loading {
+    width: 100%;
+    height: 100%;
     font-family: KGBrokenVesselsSketch;
     font-size: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     letter-spacing: 2px;
     animation-name: load;
     animation-duration: 2s;
@@ -192,4 +218,83 @@ html {
 
 .load{
     width: 100px;
+}
+
+@media (min-width: 481px) and (max-width:768px) {
+    .gallery-header {
+        height: 10%;
+    }
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+    .gallery-image-container {
+        width: 100%;
+    }   
+    .gallery-image-container-active {
+        border-radius: 30px;
+        width: 90%;
+    }
+    .gallery-inner-image-show {
+        top: 40%;
+    }
+    .gallery-inner-image {
+        width: 70%;
+    }
+    .left-button,.right-button {
+        bottom: 20%;
+        left: auto;
+        top: auto;
+        transform: none;
+        transform: translateX(-120%);
+    }
+    .right-button{
+        right: auto;
+        transform: translateX(120%);
+    }
+}
+@media (min-width: 320px) and (max-width:480px) {
+    .gallery-word{
+        font-size: 25px;
+    }
+    .gallery-header {
+        height: 10%;
+    }
+    .gallery {
+        grid-template-columns: repeat(1,1fr);
+        width: 100%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+    .gallery-image-container:last-child{
+        margin-bottom: 50px;
+    }
+    .gallery-inner-image-show {
+        top: 40%;
+    }
+    .gallery-inner-image {
+        width: 70%;
+        border-radius: 15px;
+    }
+    .left-button,.right-button {
+        bottom: 20%;
+        left: auto;
+        top: auto;
+        transform: none;
+        transform: translateX(-120%);
+    }
+    .right-button{
+        right: auto;
+        transform: translateX(120%);
+    }
+    .gallery-image-container-active .gallery-content{
+        font-size: 18px;
+    }
+    .inner-back {
+        left: 10%;
+        width: 40px;
+        height: 40px;
+    }
 }
