@@ -49,18 +49,26 @@ const App = () => {
         section={section}
         setVideoLoaded={setVideoLoaded}
       />
-      <Scrollable
-        setSection={setSection}
-      />
+      {window.screen.width >= 1024 &&
+        <Scrollable
+          setSection={setSection}
+        /> 
+      }
       <Nav
         section={section}
       />
       <Nav1
         section={section}
       />
-      <SectionIndicator 
+      <SectionIndicator
         section={section}
       />
+      {window.screen.width < 1024 &&
+        <div className='sections-nav-controls'>
+          <img src={require('./assets/arrow.png')} className='section-nav-btn' onClick={() => setSection(pre => pre - 1)}/>
+          <img src={require('./assets/arrow.png')} className='section-nav-btn section-nav-btn-right' onClick={() => setSection(pre => pre + 1)}/>
+        </div>
+      }
     </>
   );
 };

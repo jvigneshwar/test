@@ -250,7 +250,7 @@
     width: calc(96% / 1);
 }
 
-@media screen and (max-width:1023px) {
+@media screen and (min-width:768px) and (max-width:1023px) {
 
     .section-0-active {
         top: 14%;

@@ -30,7 +30,6 @@ const Scrollable = ({ setSection }) => {
         const value = e.wheelDelta || -e.deltaY || -e.detail;
         const delta = Math.max(-1, Math.min(1, value));
         let curTime = new Date().getTime()
-        console.log(curTime - lastSectionChange.current);
         if (delta < 0) {
             setSection(pre => {
                 if (pre < 6 && curTime - lastSectionChange.current >= 2000) {

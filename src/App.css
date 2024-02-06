@@ -44,7 +44,33 @@
   height: 100%;
 }
 
-@media screen and (max-width:1023px) {
+.sections-nav-controls{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  gap: 20px;
+}
+
+.section-nav-btn{
+  width: 50%;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-nav-btn-right{
+  transform: rotateY(180deg);
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
 
   .video-0 video,
   .video-1 video{

@@ -155,7 +155,8 @@
     transform: rotateX(180deg) rotateZ(30deg);
 }
 
-@media screen and (max-width:1023px) {
+@media screen and (min-width:768px) and (max-width:1023px) {
+
     .video-4 {
         width: 80%;
         height: 40%;
