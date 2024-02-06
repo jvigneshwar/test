@@ -120,8 +120,9 @@
 	&::before {
 		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
 	}
-    top: 6%;
-	right: 66%;
+	top: 6%;
+	right: 100%;
+	transform: translateX(115%);
 }
 
 
@@ -140,4 +141,14 @@
     font-family: 'KGBrokenVesselsSketch';
     color: #576986;
 	cursor: pointer;
+}
+
+@media screen and (max-width:1023px) {
+	.nav1-s4 {
+		transform: translateX(110%);
+	}
+}
+
+@media screen and (max-width:767px){
+
 }

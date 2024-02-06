@@ -142,3 +142,48 @@
     right: calc(100% - 280px);
     transform: rotateX(180deg) rotateZ(30deg);
 }
+
+@media screen and (max-width:1023px) {
+    .video-5{
+        width: 80%;
+        height: 40%;
+    }
+
+    .video-5-s5 {
+        top: 15%;
+        left: 10%;
+    }
+
+    .section-5 {
+        height: fit-content;
+        width: 80%;
+    }
+    .section-5-inner {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .section-5-s4 {
+        top: 100%;
+        left: 120%;
+    }
+
+    .section-5-s5 {
+        left: 10%;
+        top: 60%;
+    }
+
+    .section-5-s6 {
+        top: 100%;
+        left: -120%;
+    }
+
+    #section-5-arrow {
+        right: -10px;
+        top: -10px;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+}

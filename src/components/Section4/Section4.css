@@ -124,7 +124,7 @@
     font-size: 22px;
     border: 3.828px solid #000;
     background: #FFF;
-    box-shadow: 6px 6px 0px 0px #000;    
+    box-shadow: 6px 6px 0px 0px #000;
     transition: .1s;
     cursor: pointer;
     margin: 0px 12px 12px 0px;
@@ -149,8 +149,49 @@
     transform: rotateZ(15deg);
 }
 
-.section-4-button:hover + #section-4-arrow{
+.section-4-button:hover+#section-4-arrow {
     top: calc(100% - 90px);
     right: calc(100% - 280px);
     transform: rotateX(180deg) rotateZ(30deg);
 }
+
+@media screen and (max-width:1023px) {
+    .video-4 {
+        width: 80%;
+        height: 40%;
+    }
+
+    .video-4-s4 {
+        top: 15%;
+        margin-left: 0px;
+    }
+
+    .section-4 {
+        width: 80%;
+        height: fit-content;
+        top: 100%;
+        left: 120%;
+    }
+
+    .section-4-s4 {
+        left: 10%;
+        top: 60%;
+    }
+
+    .section-4-s5 {
+        top: 100%;
+        left: -120%;
+        margin-left: 0px;
+    }
+
+    .section-4-inner {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    #section-4-arrow {
+        right: -10px;
+    }
+}
+
+@media screen and (max-width:767px) {}

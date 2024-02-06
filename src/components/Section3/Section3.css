@@ -117,8 +117,29 @@
     transform: rotateZ(15deg);
 }
 
-.section-3-button:hover + #section-3-arrow{
+.section-3-button:hover+#section-3-arrow {
     top: calc(100% - 90px);
     right: calc(100% - 280px);
     transform: rotateX(180deg) rotateZ(30deg);
 }
+
+@media screen and (max-width:1023px) {
+    .section-3 {
+        width: 80%;
+        left: auto;
+        height: fit-content;
+        top: 60%;
+    }
+
+    .section-3-inner {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .section-3-s4 {
+        margin-left: -250%;
+        top: 120%;
+    }
+}
+
+@media screen and (max-width:767px) {}

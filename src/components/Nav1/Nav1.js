@@ -11,7 +11,7 @@ const Nav1 = ({section}) => {
             <Link to="/gallery">
               <div className='nav1-link'>Gallery</div>
             </Link>
-            <div className='nav1-link'>Contact Us</div>
+            <div className='nav1-link'>Contact&nbsp;Us</div>
         </div>
     </div>
   )

@@ -10,7 +10,7 @@ const Section1 = ({ section }) => {
             <div className='container-head-1'>Experienced staffs</div>
             <div className='container-text'>In the playgroup level, the young learners develop their latent In the playgroup level, the young learners develop their latent language and math skills.</div>
           </div>
-          <div className='section-1-wu'>Why us?</div>
+          <div className='section-1-wu'>Why&nbsp;us?</div>
           <div className='section-1-l11'>
             <div className='container-head-2'>10+ years Of Experience</div>
             <div className='container-text'>In the playgroup level, the young learners develop their latent In the playgroup level, the young learners develop their latent language and math skills.</div>

@@ -98,7 +98,8 @@
 		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
 	}
     top: 6%;
-	right: 66%;
+	right: 100%;
+	transform: translateX(115%);
 }
 
 .nav-s5 {
@@ -138,4 +139,14 @@
 
 .nav-links a{
 	text-decoration: none;
+}
+
+@media screen and (max-width:1023px) {
+	.nav-s4 {
+		transform: translateX(110%);
+	}
+}
+
+@media screen and (max-width:767px){
+
 }

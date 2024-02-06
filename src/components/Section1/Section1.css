@@ -70,6 +70,7 @@
 }
 
 .container-head-1 {
+    text-align: center;
     font-family: 'WorkSans-Bold';
     font-size: 21px;
     background: linear-gradient(93deg, #11FF9B 1.24%, #73FF71 70.25%);
@@ -79,6 +80,7 @@
 }
 
 .container-head-2 {
+    text-align: center;
     font-family: 'WorkSans-Bold';
     font-size: 21px;
     background: linear-gradient(93deg, #24FF11 1.24%, #50FF13 1.25%, #71FF76 70.25%);
@@ -88,6 +90,7 @@
 }
 
 .container-head-3 {
+    text-align: center;
     font-family: 'WorkSans-Bold';
     font-size: 21px;
     background: linear-gradient(93deg, #FFBC11 1.24%, #FF8271 96.15%);
@@ -97,6 +100,7 @@
 }
 
 .container-head-4 {
+    text-align: center;
     font-family: 'WorkSans-Bold';
     font-size: 21px;
     background: linear-gradient(93deg, #11A9FF 1.24%, #FF7171 70.25%);
@@ -110,4 +114,33 @@
     font-size: 12.5px;
     text-align: center;
     color: #383838;
+}
+
+@media screen and (max-width:1023px) {
+
+    .section-1 {
+        height: 60%;
+        gap: 25px;
+    }
+    .section-1-l1 {
+        width: 85%;
+        gap: 25px;
+    }
+    .section-1-l11 {
+        width: fit-content;
+        height: 100%;
+    }
+    .section-1-wu {
+        font-size: 30px;
+    }
+    .section-1-l2 {
+        width: 75%;
+        gap: 25px;
+    }
+    .section-1-l21 {
+        width: fit-content;
+    }
+}
+@media screen and (max-width:767px){
+
 }
