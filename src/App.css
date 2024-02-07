@@ -45,32 +45,47 @@
 }
 
 .sections-nav-controls{
-  width: 100%;
+  width: fit-content;
   position: fixed;
-  bottom: 0;
+  bottom: 30px;
+  right: 30px;
   display: flex;
   box-sizing: border-box;
-  padding: 10px 20px;
-  gap: 20px;
 }
 
+.sections-nav-controls-none{
+  display: none;
+}
+
+.sections-nav-controls-white .section-nav-btn{
+  border-color: white;
+  color: white;
+  background: rgba(255,255,255,0.06);
+} 
+
 .section-nav-btn{
-  width: 50%;
-  height: 60px;
+  aspect-ratio: 1.2/1;
+  border-radius: 50px 0px 0px 50px;
+  height: 50px;
   object-fit: contain;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #797979;
+  color: #797979;
 }
 
 .section-nav-btn-right{
-  transform: rotateY(180deg);
+  border-radius: 0px 50px 50px 0px;
+  border-left: none;
 }
 
-@media screen and (min-width:768px) and (max-width:1023px) {
+.section-nav-btn svg{
+  font-size: 25px;
+}
+
+@media screen and (max-width:1023px) {
 
   .video-0 video,
   .video-1 video{
@@ -78,5 +93,7 @@
   }
 }
 @media screen and (max-width:767px){
-
+  .section-nav-btn{
+    height: 45px;
+  }
 }

@@ -220,7 +220,8 @@ html {
     width: 100px;
 }
 
-@media (min-width: 481px) and (max-width:768px) {
+@media screen and (min-width:768px) and (max-width:1023px) {
+
     .gallery-header {
         height: 10%;
     }
@@ -255,7 +256,7 @@ html {
         transform: translateX(120%);
     }
 }
-@media (min-width: 320px) and (max-width:480px) {
+@media screen and (max-width:767px){
     .gallery-word{
         font-size: 25px;
     }

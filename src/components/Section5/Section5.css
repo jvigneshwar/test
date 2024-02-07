@@ -1,6 +1,7 @@
 .video-5 {
+    left: 4%;
     top: 35%;
-    left: 120%;
+    margin-left: 120%;
     width: 50%;
     height: 86%;
     border-radius: 40px;
@@ -8,19 +9,29 @@
     transition: 1.5s;
 }
 
+.video-5-s3 {
+    display: none;
+}
+
+.video-5-s4 {
+    display: block;
+}
+
 .video-5-s5 {
     top: 7%;
-    left: 4%;
+    margin-left: 0px;
     transform: rotate(0deg);
 }
 
 .video-5-s6 {
     transform: rotate(-15deg);
     top: 60%;
-    left: -180%;
+    margin-left: -180%;
 }
 
-
+.video-5-s7 {
+    display: none;
+}
 
 .section-5 {
     overflow: hidden;

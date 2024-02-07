@@ -111,14 +111,8 @@
 }
 
 .nav-s6 {
-	&::before {
-		background: linear-gradient(93deg, #FF7A00 1.24%, #FFB72C 70.25%);
-	}
-    top: 6%;
-	right: 110%;
+	display: none;
 }
-
-
 
 .nav-logo {
     height: 40px;
@@ -141,12 +135,31 @@
 	text-decoration: none;
 }
 
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (max-width:1023px) {
 	.nav-s4 {
 		transform: translateX(110%);
 	}
 }
 
 @media screen and (max-width:767px){
+	.nav-logo {
+		height: 30px;	
+	}
+	.nav {
+		gap: 25px;
+	}
+	.nav-links {
+		gap: 25px;
+	}
+	.nav-links a{
+		font-size: 15px;
+	}
 
+
+	.nav-s0,.nav-s1,.nav-s2,.nav-s3,.nav-s4,.nav-s5,.nav-s6 {
+		top: 5%;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+	}
 }

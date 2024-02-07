@@ -13,12 +13,11 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
 
     useEffect(() => {
         let c = 0;
-        for (let i = 0; i < 3; i++) {
-            if (videoLoaded[i] === true) {
+        for (let i = 0; i <= 4; i++) {
+            if (videoLoaded[i+""] === true) {
                 c++;
             }
         }
-        // console.log(c);
         setLoadLength(c);
 
         if (videoLoaded["0"] === true && videoLoaded["1"] === true && videoLoaded["2"] === true && videoLoaded["3"] === true && videoLoaded["4"] === true) {
@@ -61,7 +60,6 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
         if (section === 4) {
             videoRef3.current.pause();
         }
-
         return () => clearTimeout(timeoutId);
     }, [section])
 
@@ -84,6 +82,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef3}
                     muted
                     loop
+                    preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "1": true }))}
                     className='video-inner-3'
                 >
@@ -94,6 +93,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef2}
                     muted
                     loop
+                    preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "2": true }))}
                     className='video-inner-2'
                 >
@@ -104,8 +104,8 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef1}
                     muted
                     // loop
+                    preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "3": true }))}
-
                     className='video-inner-1'
                 >
                     <source src={require("../../assets/video-1.mp4")} type="video/mp4" />
@@ -115,6 +115,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     ref={videoRef00}
                     muted
                     loop
+                    preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "4": true }))}
                     className='video-inner-0'
                 >
@@ -127,6 +128,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                 <video
                     ref={videoRef0}
                     muted
+                    preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "0": true }))}
                     onEnded={handleEnded}
                     onTimeUpdate={handleTimeUpdate}

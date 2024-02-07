@@ -9,7 +9,7 @@ const Section6 = ({ section, setVideoLoaded }) => {
         if(section===5)
             videoRef6.current.pause();
         if(section === 6){
-            // videoRef6.current.currentTime = 0;
+            videoRef6.current.currentTime = 0;
             videoRef6.current.play();
         }
     })
@@ -21,8 +21,8 @@ const Section6 = ({ section, setVideoLoaded }) => {
                     ref={videoRef6}
                     muted
                     loop
-                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "6":true}))}
-
+                    preload='auto'
+                    onLoadedData={() => setVideoLoaded(pre => ({...pre, "7":true}))}
                 >
                     <source src={require("../../assets/video-6.mp4")} type="video/mp4" />
                     Your browser does not support the video tag.
