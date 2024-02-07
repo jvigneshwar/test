@@ -24,7 +24,7 @@ const Section6 = ({ section, setVideoLoaded }) => {
                     preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({...pre, "7":true}))}
                 >
-                    <source src={require("../../assets/video-6.mp4")} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-6' type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
