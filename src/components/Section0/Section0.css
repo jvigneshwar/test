@@ -259,12 +259,13 @@
     width: calc(96% / 1);
 }
 
-@media screen and (min-width:768px) and (max-width:1023px) {
-
+@media screen and (max-width:1023px) {
+    .know-more {
+        display: none;
+    }
     .section-0-active {
         top: 14%;
     }
-
     .section-0 {
         width: 90%;
         left: 50%;
@@ -273,9 +274,9 @@
     }
 
     .video-1-s1 {
-        top: 16%;
-        width: 60vh;
-        height: 25%;
+        top: 15%;
+        width: 85%;
+        height: 35vw;
     }
     .video-1-s2 {
         top: 15%;
@@ -295,4 +296,18 @@
     }
 }
 
-@media screen and (max-width:767px) {}
+@media screen and (max-width:767px) {
+    .section-0 {
+        width: 85%;
+    }
+    #section-0-t1 {
+        font-size: 35px;
+    }
+    #section-0-t2 {
+        font-size: 20px;
+    }
+    .video-1-s1 {
+        width: 85%;
+        height: 40vw;
+    }
+}

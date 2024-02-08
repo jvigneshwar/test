@@ -86,7 +86,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "1": true }))}
                     className='video-inner-3'
                 >
-                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-3' type="video/mp4" />
+                    <source src={require('../../assets/video-3.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -97,7 +97,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "2": true }))}
                     className='video-inner-2'
                 >
-                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-2' type="video/mp4" />
+                    <source src={require('../../assets/video-2.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -108,7 +108,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "3": true }))}
                     className='video-inner-1'
                 >
-                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-1' type="video/mp4" />
+                    <source src={require('../../assets/video-1.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -119,7 +119,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "4": true }))}
                     className='video-inner-0'
                 >
-                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-00' type="video/mp4" />
+                    <source src={require('../../assets/video-00.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -133,14 +133,14 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onEnded={handleEnded}
                     onTimeUpdate={handleTimeUpdate}
                 >
-                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-0' type="video/mp4" />
+                    <source src={require('../../assets/video-0.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div className={section === 0 ? "section-0 section-0-active" : "section-0"}>
                 <p id="section-0-t1">Hummingbird’s Academy of Learning</p>
-                <p id="section-0-t2">Where students are bestowed to<br /> excellence</p>
+                <p id="section-0-t2">Where students are bestowed to excellence</p>
                 <div className={`know-more km-${section}`}>
                     <p>Know more</p>
                     <Icon icon="ep:arrow-down-bold" />

@@ -155,6 +155,9 @@
 		font-size: 15px;
 	}
 
+	.nav-s6 {
+		display: flex;
+	}
 
 	.nav-s0,.nav-s1,.nav-s2,.nav-s3,.nav-s4,.nav-s5,.nav-s6 {
 		top: 5%;
