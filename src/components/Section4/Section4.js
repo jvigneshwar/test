@@ -6,13 +6,17 @@ const Section4 = ({ section, setVideoLoaded }) => {
 
     useEffect(() => {
         if (section === 3)
-            videoRef4.current.pause();
+            if(videoRef4.current)
+                videoRef4.current.pause();
         if (section === 4) {
-            videoRef4.current.currentTime = 0;
-            videoRef4.current.play();
+            if(videoRef4.current){
+                videoRef4.current.currentTime = 0;
+                videoRef4.current.play();
+            }
         }
         if (section === 5)
-            videoRef4.current.pause();
+            if(videoRef4.current)
+                videoRef4.current.pause();
     })
 
     return (
@@ -25,7 +29,7 @@ const Section4 = ({ section, setVideoLoaded }) => {
                     preload='auto'
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "5": true }))}
                 >
-                    <source src={require('../../assets/video-4.mp4')} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-4'  type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>

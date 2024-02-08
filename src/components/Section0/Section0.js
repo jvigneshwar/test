@@ -14,7 +14,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
     useEffect(() => {
         let c = 0;
         for (let i = 0; i <= 4; i++) {
-            if (videoLoaded[i+""] === true) {
+            if (videoLoaded[i + ""] === true) {
                 c++;
             }
         }
@@ -39,26 +39,39 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
         }, 2000);
 
         if (section === 0) {
-            videoRef00.current.play();
-            videoRef1.current.pause();
+            if (videoRef00.current)
+                videoRef00.current.play();
+            if (videoRef1.current)
+                videoRef1.current.pause();
         }
         if (section === 1) {
-            videoRef00.current.pause();
-            videoRef1.current.currentTime = 0;
-            videoRef1.current.play();
-            videoRef2.current.pause();
+            if (videoRef00.current)
+                videoRef00.current.pause();
+            if (videoRef1.current) {
+                videoRef1.current.currentTime = 0;
+                videoRef1.current.play();
+            }
+            if (videoRef2.current)
+                videoRef2.current.pause();
         }
         if (section === 2) {
-            videoRef2.current.play();
-            videoRef1.current.pause();
-            videoRef3.current.pause();
+            if (videoRef2.current)
+                videoRef2.current.play();
+            if (videoRef1.current) {
+                videoRef1.current.pause();
+            }
+            if (videoRef3.current)
+                videoRef3.current.pause();
         }
         if (section === 3) {
-            videoRef3.current.play();
-            videoRef2.current.pause();
+            if (videoRef3.current)
+                videoRef3.current.play();
+            if (videoRef2.current)
+                videoRef2.current.pause();
         }
         if (section === 4) {
-            videoRef3.current.pause();
+            if (videoRef3.current)
+                videoRef3.current.pause();
         }
         return () => clearTimeout(timeoutId);
     }, [section])
@@ -86,7 +99,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "1": true }))}
                     className='video-inner-3'
                 >
-                    <source src={require('../../assets/video-3.mp4')} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-3' type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -97,7 +110,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "2": true }))}
                     className='video-inner-2'
                 >
-                    <source src={require('../../assets/video-2.mp4')} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-2' type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -108,7 +121,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "3": true }))}
                     className='video-inner-1'
                 >
-                    <source src={require('../../assets/video-1.mp4')} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-1' type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <video
@@ -119,7 +132,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onLoadedData={() => setVideoLoaded(pre => ({ ...pre, "4": true }))}
                     className='video-inner-0'
                 >
-                    <source src={require('../../assets/video-00.mp4')} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-00' type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -133,7 +146,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                     onEnded={handleEnded}
                     onTimeUpdate={handleTimeUpdate}
                 >
-                    <source src={require('../../assets/video-0.mp4')} type="video/mp4" />
+                    <source src='https://res.cloudinary.com/dqwfvbure/video/upload/f_auto:video,q_auto/v1/videos/video-0' type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -153,7 +166,7 @@ const Section0 = ({ loadingVideo, setLoadingVideo, section, setSection, videoLoa
                         `progress-inner progress-${loadLength}`
                     }></div>
                 </div>
-                    <div>{JSON.stringify(videoLoaded)}</div>
+                <div>{JSON.stringify(videoLoaded)}</div>
             </div>
         </>
     )

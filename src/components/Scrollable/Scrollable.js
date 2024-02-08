@@ -88,8 +88,8 @@ const Scrollable = ({ setSection, section }) => {
 
     return (
         <div className={`sections-nav-controls ${section === -1 && 'sections-nav-controls-none'}  ${section === 0 && 'sections-nav-controls-white'}`}>
-            <div className='section-nav-btn' onClick={() => handleNextTouch()}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m14 7l-5 5m0 0l5 5" /></svg></div>
-            <div className='section-nav-btn section-nav-btn-right' onClick={() => handlePreviousTouch()}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m10 17l5-5m0 0l-5-5" /></svg></div>
+            <div className='section-nav-btn' onClick={() => handlePreviousTouch()}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m14 7l-5 5m0 0l5 5" /></svg></div>
+            <div className='section-nav-btn section-nav-btn-right' onClick={() => handleNextTouch()}><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m10 17l5-5m0 0l-5-5" /></svg></div>
         </div>
     )
 }
